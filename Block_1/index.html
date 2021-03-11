@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Data Visualisation Exercise 1.1">
+        <meta name="keywords" content="HTML, CSS">
+        <meta name="author" content="Lawrence Zhou">
+        <title>Task 1.1 HTML and CSS Demo Page</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <div id="top-half">
+            <h1>About Lawrence Zhou</h1>
+            <h2 id="author">- Written by Lawrence zhou</h2>
+            <p>My name is <strong>Lawrence Zhou.</strong>
+                I am currently a university student studying Computer Science in <em>Australia</em>, whilst also studying Web Design on the side!</p>
+        </div>
+
+        <div id="interestsAndHobbies">
+            <h2 class=>Interests and Hobbies</h2>
+            <p>I am a person with many interests and hobbies. These include:
+                <ul>
+                    <li>Video Games</li>
+                    <li>Wathcing anime</li>
+                    <li>Tennis</li>
+                    <li>Exercise</li>
+                    <li>Hanging out with friends!</li>
+                </ul>
+            </p>
+        </div>
+
+        <div id="buttons">
+            <button id="button2011" onclick="openFigure2011closeFigure2017()">2011</button>
+            <button id="button2017" onclick="openFigure2017closeFigure2011()">2017</button>
+        </div>
+
+        <figure id="naplanResults2011" class="active">
+            <img src="images/NT_Naplan_Reading_Results_2011.png">
+            <figcaption><em>Fig 1. The percent of children above the national minimumstandrd in reading in 2011 for Years 3, 5, 7, 9 for Non-Indigenous and Indigenous children in the Northern Territory.</em></figcaption>
+        </figure>
+
+        <figure id="naplanResults2017">
+            <img src="images/NT_Naplan_Reading_Results_2017.png">
+            <figcaption><em>Fig 2. The percent of children above the national minimumstandrd in reading in 2017 for Years 3, 5, 7, 9 for Non-Indigenous and Indigenous children in the Northern Territory.</em></figcaption>
+        </figure>
+
+        <footer>&#169 Lawrence Zhou 2021</footer>
+
+        <script src="js/index.js"></script>
+
+    </body>
+</html>

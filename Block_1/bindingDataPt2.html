@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Data Visualisation Exercise 1.4">
+        <meta name="keywords" content="D3 Data Binding">
+        <meta name="author" content="Lawrence Zhou">
+        <title>Task 1.4 HTML D3 Data Binding</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="js/bindingDataPt2.js"></script>
+    </head>
+    <body>
+        <h1>D3 Data Binding</h1>
+        <script>
+            var body = d3.select("body");            
+            
+            // Example 2
+            var dataset = [14, 5, 26, 23, 9];
+            body.selectAll("p")
+                .data(dataset) 
+                .enter() // Creates a new placeholder element for each bit of data
+                .append("p") // Appends a p element to match each placeholder
+                .text(function(d, i) {
+                    if (d > 10) {
+                        return "Warning: Joe watched " + d + " cat videos today.";
+                    } else {
+                        return "Joe watched " + d + " cat videos today.";
+                    }
+                });
+
+            console.log(d3.selectAll("p"));
+        </script>
+        <script src="js/bindingDataPt2.js"></script>
+    </body>
+</html>
