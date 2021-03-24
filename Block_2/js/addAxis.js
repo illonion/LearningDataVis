@@ -1,10 +1,10 @@
-const width = 900
+const width = 1000
 const height = 600;
 const textHDistance = 7;
 const textVDistance = 5;
 const padding = 20;
 
-let dataset = [[5, 25], [480, 90], [250, 50], [100, 33], [330, 95], [410, 74], [475, 44], [25, 67], [85, 47], [220, 88]];
+let dataset = [[5, 20], [480, 90], [250, 50], [100, 33], [330, 95], [410, 12], [475, 44], [25, 67], [85, 21], [220, 88]];
 let svg = d3.select("body")
     .append("svg")
     .attr("width", width)
@@ -28,10 +28,13 @@ var yScale = d3.scaleLinear()
     })])
     .range([height - padding, padding]);
 
-var xAxis = d3.axisBottom().ticks(5).scale(xScale);
+var xAxis = d3.axisBottom()
+    .ticks(5)
+    .scale(xScale);
 
-svg.append("g").attr("transform", "translate(0, " + (height - padding)  + ")").call(xAxis);
-
+var yAxis = d3.axisLeft()
+    .ticks(6)
+    .scale(yScale);
 
 svg.selectAll("circle")
     .data(dataset)
@@ -59,3 +62,11 @@ svg.selectAll("text")
     .attr("y", function(d, i) {
         return yScale(d[1]) + textVDistance;
     });
+
+svg.append("g")
+    .attr("transform", "translate(0, " + (height - padding) + ")")
+    .call(xAxis);
+
+svg.append("g")
+    .attr("transform", "translate(" + padding + ", 0)")
+    .call(yAxis);
