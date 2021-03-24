@@ -28,9 +28,10 @@ var yScale = d3.scaleLinear()
     })])
     .range([height - padding, padding]);
 
-var xAxis = d3.axisBottom().scale(xScale);
+var xAxis = d3.axisBottom().ticks(5).scale(xScale);
 
 svg.append("g").attr("transform", "translate(0, " + (height - padding)  + ")").call(xAxis);
+
 
 svg.selectAll("circle")
     .data(dataset)
