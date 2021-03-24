@@ -1,10 +1,10 @@
-const width = 500
+const width = 900
 const height = 600;
 const textHDistance = 7;
 const textVDistance = 5;
 const padding = 20;
 
-let dataset = [[5, 20], [480, 90], [250, 50], [100, 33], [330, 95], [410, 20], [475, 44], [25, 67], [85, 21], [220, 88]];
+let dataset = [[5, 25], [480, 90], [250, 50], [100, 33], [330, 95], [410, 74], [475, 44], [25, 67], [85, 47], [220, 88]];
 let svg = d3.select("body")
     .append("svg")
     .attr("width", width)
