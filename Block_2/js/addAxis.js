@@ -11,21 +11,11 @@ let svg = d3.select("body")
     .attr("height", height);
 
 var xScale = d3.scaleLinear()
-    .domain([d3.min(dataset, function(d) {
-        return d[0];
-    }),
-    d3.max(dataset, function(d) {
-        return d[0];
-    })])
+    .domain([0, d3.max(dataset, function(d) {return d[0];})])
     .range([padding, width - padding * 4]);
 
 var yScale = d3.scaleLinear()
-    .domain([d3.min(dataset, function(d) {
-        return d[1];
-    }),
-    d3.max(dataset, function(d) {
-        return d[1];
-    })])
+    .domain([0, d3.max(dataset, function(d) {return d[1]})])
     .range([height - padding, padding]);
 
 var xAxis = d3.axisBottom()
