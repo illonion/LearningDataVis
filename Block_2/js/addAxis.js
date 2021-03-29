@@ -23,7 +23,7 @@ var xAxis = d3.axisBottom()
     .scale(xScale);
 
 var yAxis = d3.axisLeft()
-    .ticks(6)
+    .ticks(10)
     .scale(yScale);
 
 svg.selectAll("circle")
