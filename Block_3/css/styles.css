@@ -58,14 +58,13 @@ footer {
     color:white;
 }
 
-#button2011 {
-    background-color:rgb(68,114,196);
-}
-
-#button2017 {
-    background-color:rgb(238,125,49);
-}
-
 .active {
     display:block   ;
+}
+
+#updateDataSet {
+    background-color:rgb(68,114,196);
+    color:white;
+    border:none;
+    margin-left:5px;
 }

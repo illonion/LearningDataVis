@@ -1,20 +1,63 @@
-const width = 500;
-const height = 100;
-const barPadding = 2;
+//Width and height
+var w = 600;
+var h = 200;
 
-const dataset = [14, 5, 26, 23, 9, 4, 20, 1, 8, 22];
+//Max Value
+var maxValue = 25;
 
+var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13, 11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
+var xScale = d3.scaleBand()
+                .domain(d3.range(dataset.length))
+                .rangeRound([0, w])
+                .paddingInner(0.05);
+
+var yScale = d3.scaleLinear()
+                .domain([0, d3.max(dataset)])
+                .range([0, h]);
+
+//Create SVG element
 var svg = d3.select("body")
-    .append("svg")
-    .attr("width", width)
-    .attr("height", height);
+            .append("svg")
+            .attr("width", w)
+            .attr("height", h);
 
-    svg.selectAll("rect")
-    .data(dataset)
-    .enter()
-    .append("rect")
-    .attr("x", function(d, i) { return i * (width / dataset.length); })
-    .attr("y", function(d) { return height - (d * 4); })
-    .attr("width", width / dataset.length - barPadding)
-    .attr("height", function(d) { return d * 4; })
-    .attr("fill", function(d) { return "rgb(0, 0, " + Math.round(d * 10) + ")"; });
+//Create bars
+svg.selectAll("rect")
+   .data(dataset)
+   .enter()
+   .append("rect")
+   .attr("x", function(d, i) {
+           return xScale(i);
+   })
+   .attr("y", function(d) {
+           return h - yScale(d);
+   })
+   .attr("width", xScale.bandwidth())
+   .attr("height", function(d) {
+           return yScale(d);
+   })
+   .attr("fill", function(d) {
+        return "rgb(0, 0, " + Math.round(d * 10) + ")";
+   });
+
+
+// Generate New Graph Button
+var numValues = dataset.length;
+
+d3.select("button")
+   .on("click", function() {
+        var dataset = [];
+
+        for (var i = 0; i < numValues; i++) {
+            dataset.push(Math.floor(Math.random() * maxValue));
+        }
+
+        svg.selectAll("rect")
+            .data(dataset)
+            .attr("y", function(d) {
+                return h - yScale(d);
+            })
+            .attr("height", function(d) {
+                return yScale(d);
+            })
+   })
