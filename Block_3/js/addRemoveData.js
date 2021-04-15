@@ -55,7 +55,6 @@ d3.select("#removeData")
     .on("click", function() {
 
         dataset.shift();
-        xScale.domain(d3.range(dataset.length));
 
         const bars = svg.selectAll("rect")
             .data(dataset);
