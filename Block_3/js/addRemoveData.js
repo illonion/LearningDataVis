@@ -28,7 +28,7 @@ svg.selectAll("rect")
     .attr("height", function(d) { return yScale(d); })
     .attr("fill", function(d) { return "rgb(0, 0, " + Math.round(d * 10) + ")"; });
 
-d3.select("button")
+d3.select("#updateData1")
     .on("click", function() {
         const numValues = dataset.length;
         dataset = [];
@@ -39,6 +39,62 @@ d3.select("button")
         
         svg.selectAll("rect")
             .data(dataset)
+            .transition()
+            .delay(function(d, i) {
+                return i / dataset.length * 1000;
+            })
+            .duration(500)
+            .ease(d3.easeCircleOut)
+            .attr("y", function(d) {
+                return height - yScale(d);
+            })
+            .attr("height", function(d) {
+                return yScale(d);
+            })
+    })
+
+d3.select("#updateData2")
+    .on("click", function() {
+        const numValues = dataset.length;
+        dataset = [];
+        for (let i = 0; i < numValues; i++)
+        {
+            dataset.push(Math.floor(Math.random() * maxValue));
+        }
+        
+        svg.selectAll("rect")
+            .data(dataset)
+            .transition()
+            .delay(function(d, i) {
+                return i / dataset.length * 2000;
+            })
+            .duration(500)
+            .ease(d3.easeCircleIn)
+            .attr("y", function(d) {
+                return height - yScale(d);
+            })
+            .attr("height", function(d) {
+                return yScale(d);
+            })
+    })
+
+d3.select("#updateData3")
+    .on("click", function() {
+        const numValues = dataset.length;
+        dataset = [];
+        for (let i = 0; i < numValues; i++)
+        {
+            dataset.push(Math.floor(Math.random() * maxValue));
+        }
+        
+        svg.selectAll("rect")
+            .data(dataset)
+            .transition()
+            .delay(function(d, i) {
+                return i / dataset.length * 2000;
+            })
+            .duration(500)
+            .ease(d3.easeSinIn)
             .attr("y", function(d) {
                 return height - yScale(d);
             })
