@@ -68,3 +68,9 @@ footer {
     border:none;
     margin-left:5px;
 }
+
+#updateData {
+    background-color:aquamarine;
+    border: 2px solid;
+    position: absolute;
+}
