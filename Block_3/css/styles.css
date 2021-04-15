@@ -61,29 +61,23 @@ footer {
 .active {
     display:block   ;
 }
-#updateData2 {
-    background-color:green;
-    border: 2px solid;
-    position: absolute;
-    top: 80px;
-}
 
-#updateData3 {
-    background-color:yellowgreen;
-    border: 2px solid;
-    position: absolute;
-    top: 102px;
-}
-
-#addData {
+#updateData1, #addData {
     background-color:aquamarine;
     border: 2px solid;
     position: absolute;
 }
 
-#removeData {
+#updateData2, #removeData {
     background-color:green;
     border: 2px solid;
     position: absolute;
     top: 80px;
+}
+
+#updateData3, #sortData {
+    background-color:yellowgreen;
+    border: 2px solid;
+    position: absolute;
+    top: 102px;
 }
