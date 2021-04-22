@@ -28,18 +28,18 @@ svg.selectAll("rect")
     .attr("height", function(d) { return yScale(d); })
     .attr("fill", "grey")
     .on("mouseover", function(d) {
-        var xPosition = parseFloat(d3.select(this).attr("x"));
-        var yPosition = parseFloat(d3.select(this).attr("y"));
+        var xPosition = parseFloat(d3.select(this).attr("x")) + xScale.bandwidth()/2;
+        var yPosition = parseFloat(d3.select(this).attr("y")) + 20;
 
         d3.select(this)
             .attr("fill", "orange");
         
         var tooltips = svg.append("text")
             .attr("id", "tooltip")
-            .attr("x", xPosition + (xScale.bandwidth() / 4))
-            .attr("y", yPosition + 20)
+            .attr("x", xPosition)
+            .attr("y", yPosition)
+            .attr("text-anchor", "middle")
             .text(d)
-            .style("text-align", "center");
             
     })
     .on("mouseout", function() {

@@ -89,7 +89,7 @@ d3.select("#updateData3")
         
         svg.selectAll("rect")
             .data(dataset)
-            .transition()
+            .transition(500)
             .delay(function(d, i) {
                 return i / dataset.length * 2000;
             })
