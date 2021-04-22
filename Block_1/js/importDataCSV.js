@@ -2,7 +2,7 @@ const width = 600
 const height = 400;
 const barPadding = 3;
 
-d3.csv("Task17.csv").then(function(data) {
+d3.csv("/Task17.csv").then(function(data) {
     var dataset = data;
     console.log(dataset);
     barChart(dataset);

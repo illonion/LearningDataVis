@@ -81,3 +81,9 @@ footer {
     position: absolute;
     top: 102px;
 }
+
+.line {
+    fill: none;
+    stroke: black;
+    stroke-width: 0.5;
+}
