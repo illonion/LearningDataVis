@@ -15,7 +15,7 @@ var svg = d3.select("body")
 
 d3.json("resources/LGA_VIC.json").then(function(json) {
     svg.selectAll("path")
-        .data(json.features)
+        .data(json.features)    
         .enter()
         .append("path")
         .attr("d", path);
